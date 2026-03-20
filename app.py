@@ -134,8 +134,8 @@ with c1:
             x=df_n.index,
             open=df_n["Open"],high=df_n["High"],
             low=df_n["Low"],  close=df_n["Close"],
-            increasing=dict(line_color=UP,  fillcolor=UP+"44"),
-            decreasing=dict(line_color=DOWN,fillcolor=DOWN+"44"),
+            increasing=dict(line_color=UP,  fillcolor="rgba(0,208,132,0.27)"),
+            decreasing=dict(line_color=DOWN,fillcolor="rgba(255,59,92,0.27)"),
             name="Nifty",
         ), row=1, col=1)
         if len(df_n) >= 20:

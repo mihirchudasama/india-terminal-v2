@@ -136,8 +136,8 @@ with c1:
     fig.add_trace(go.Candlestick(
         x=df.index, open=df["Open"], high=df["High"],
         low=df["Low"], close=df["Close"],
-        increasing=dict(line_color=UP,  fillcolor=UP+"55"),
-        decreasing=dict(line_color=DOWN,fillcolor=DOWN+"55"),
+        increasing_line_color="#00d084", increasing_fillcolor="rgba(0,208,132,0.33)",
+        decreasing_line_color="#ff3b5c", decreasing_fillcolor="rgba(255,59,92,0.33)",
         name=ticker_input,
     ), row=1, col=1)
 
@@ -150,7 +150,7 @@ with c1:
         ), row=1, col=1)
         fig.add_trace(go.Scatter(
             x=df.index, y=ind["bb_lo_s"],
-            fill="tonexty", fillcolor=PURPLE+"18",
+            fill="tonexty", fillcolor="rgba(155,109,255,0.09)",
             line=dict(color=PURPLE,width=0.8,dash="dot"),
             name="BB Lower", showlegend=False,
         ), row=1, col=1)
@@ -187,9 +187,9 @@ with c1:
         line=dict(color=ACCENT,width=1.5),
         name="RSI", showlegend=False,
     ), row=2, col=1)
-    fig.add_hline(y=70, line_dash="dot", line_color=DOWN+"88",
+    fig.add_hline(y=70, line_dash="dot", line_color="rgba(255,59,92,0.53)",
                   line_width=1, row=2, col=1)
-    fig.add_hline(y=30, line_dash="dot", line_color=UP+"88",
+    fig.add_hline(y=30, line_dash="dot", line_color="rgba(0,208,132,0.53)",
                   line_width=1, row=2, col=1)
 
     # MACD
@@ -474,14 +474,14 @@ if not df_a.empty and not df_b.empty:
             line=dict(color=PURPLE,width=1.5),
             name=f"{window}d rolling corr",
             fill="tozeroy",
-            fillcolor=PURPLE+"22",
+            fillcolor="rgba(155,109,255,0.13)",
         ), row=2, col=1)
         fig_c.add_hline(y=0, line_color=MUTED, line_width=0.8,
                         row=2, col=1)
         fig_c.add_hline(y=0.7,  line_dash="dot",
-                        line_color=UP+"66",  line_width=1, row=2, col=1)
+                        line_color="rgba(0,208,132,0.40)",  line_width=1, row=2, col=1)
         fig_c.add_hline(y=-0.7, line_dash="dot",
-                        line_color=DOWN+"66",line_width=1, row=2, col=1)
+                        line_color="rgba(255,59,92,0.40)",line_width=1, row=2, col=1)
         dc2 = dark_chart(); dc2.pop("xaxis",None); dc2.pop("yaxis",None)
         fig_c.update_layout(
             **dc2, height=340,

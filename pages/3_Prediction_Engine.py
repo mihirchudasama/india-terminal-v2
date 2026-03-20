@@ -286,7 +286,7 @@ with fc1:
     fig_cpi.add_trace(go.Scatter(
         x=list(fc_dates)+list(reversed(fc_dates)),
         y=list(fc_hi)+list(reversed(fc_lo)),
-        fill="toself", fillcolor=ACCENT+"22",
+        fill="toself", fillcolor="rgba(245,166,35,0.13)",
         line=dict(color="rgba(0,0,0,0)"),
         name="80% band", hoverinfo="skip",
     ))
@@ -491,7 +491,7 @@ fig_macro.add_trace(go.Scatter(
     x=hist_dates2, y=cpi_hist,
     mode="lines", name="CPI",
     line=dict(color=DOWN,width=2),
-    fill="tozeroy", fillcolor=DOWN+"18",
+    fill="tozeroy", fillcolor="rgba(255,59,92,0.09)",
     hovertemplate="%{x|%b %Y} CPI: <b>%{y:.2f}%</b><extra></extra>",
 ))
 fig_macro.add_trace(go.Scatter(
@@ -501,7 +501,7 @@ fig_macro.add_trace(go.Scatter(
     hovertemplate="%{x|%b %Y} Repo: <b>%{y:.2f}%</b><extra></extra>",
 ))
 fig_macro.add_hline(y=4.0, line_dash="dot",
-                    line_color=UP+"88", line_width=1)
+                    line_color="rgba(0,208,132,0.53)", line_width=1)
 
 dc5 = dark_chart()
 fig_macro.update_layout(
